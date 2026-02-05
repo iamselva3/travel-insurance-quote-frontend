@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Insurance Plans</title>
+    <link rel="stylesheet" href="css/quote.css" />
+    <link rel="stylesheet" href="css/quote.mobile.css" />
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="top-bar">
+            <div class="back">
+                <a href="./index.html">← <span>Back</span></a>
+            </div>
+            <div class="logo">
+                <img src="assets/logo-6.png" class="logo" alt="Logo Ipsum">
+            </div>
+        </div>
+
+        <div class="stepper">
+            <div class="line"></div>
+
+            <div class="step active">
+                <div class="circle">✓</div>
+                <span>Get Quote</span>
+            </div>
+
+            <div class="step">
+                <div class="circle plane">✈</div>
+                <span>Plan Option</span>
+            </div>
+
+            <div class="step">
+                <div class="circle"></div>
+                <span>Travellers</span>
+            </div>
+
+            <div class="step">
+                <div class="circle"></div>
+                <span>Payment</span>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main class="page-container">
+
+        <section class="summary">
+            <div><strong>Destination(s):</strong> <span id="destinations-summary">Australia</span></div>
+            <div><strong>Dates:</strong> <span id="dates-summary">10/11/2025 - 12/11/2025</span></div>
+            <div><strong>Traveller Ages:</strong> <span id="ages-summary">23</span> <span class="edit">Edit</span></div>
+        </section>
+
+        <!-- DESKTOP VIEW -->
+        <div class="plans-grid desktop-view">
+
+            <div></div>
+
+            <!-- PLAN HEADERS -->
+            <div class="plan-header voyager">
+                <div class="icon dark">D</div>
+                <h3>VOYAGER</h3>
+                <p class="strike">From $17.37</p>
+                <h2>$15.98</h2>
+                <span>Total Cost</span>
+                <p class="subtext">Policy level limits, see Traveller Info only apply</p>
+            </div>
+
+            <div class="plan-header plus">
+                <div class="icon gold">D</div>
+                <h3>VOYAGER PLUS</h3>
+                <p class="strike">From $44.94</p>
+                <h2>$41.34</h2>
+                <span>Total Cost</span>
+                <p class="subtext">Policy level limits, see Traveller Info only apply</p>
+            </div>
+
+            <!-- ROW 1 -->
+            <div class="label">Cancellation or trip interruption <span class="info-icon">i</span></div>
+            <div class="cell">$1,000</div>
+            <div class="cell">
+                <select>
+                    <option>$4,000</option>
+                    <option>$3,000</option>
+                    <option>$2,000</option>
+                </select>
+            </div>
+
+            <!-- ROW 2 -->
+            <div class="label">Luggage and personal effects <span class="info-icon">i</span></div>
+            <div class="cell">$500</div>
+            <div class="cell">
+                <select>
+                    <option>$1,000</option>
+                    <option>$750</option>
+                    <option>$500</option>
+                </select>
+            </div>
+
+            <!-- ROW 3 -->
+            <div class="label">Travel Delay <span class="info-icon">i</span></div>
+            <div class="cell muted">not available</div>
+            <div class="cell">$1,000</div>
+
+            <!-- ROW 4 -->
+            <div class="label">Personal Liability <span class="info-icon">i</span></div>
+            <div class="cell muted">not available</div>
+            <div class="cell">$2,500,000</div>
+
+            <!-- OPTIONAL COVER -->
+            <div class="label section">Optional Cover</div>
+            <div class="cell muted">not available</div>
+            <div class="cell muted">not available</div>
+
+            <!-- ROW 5 -->
+            <div class="label">Rental Vehicle Excess <span class="info-icon">i</span></div>
+            <div class="cell muted">not available</div>
+            <div class="cell">
+                <select>
+                    <option>Not Selected</option>
+                    <option>$5,000</option>
+                    <option>$7,500</option>
+                </select>
+            </div>
+
+            <!-- SHOW ALL BENEFITS -->
+            <div class="cell"></div>
+            <div class="cell">
+                <p class="link">Show All Benefits</p>
+            </div>
+            <div class="cell"></div>
+
+            <!-- BUTTONS -->
+            <div></div>
+            <div class="cell">
+                <button class="btn dark">CHOOSE PLAN</button>
+                <p class="link">View Policy Information</p>
+            </div>
+            <div class="cell">
+                <button class="btn gold">CHOOSE PLAN</button>
+                <p class="link">View Policy Information</p>
+            </div>
+
+        </div>
+
+        <!-- MOBILE VIEW -->
+        <div class="plans-grid mobile-view" style="display: none;">
+
+            <!-- VOYAGER PLAN CARD -->
+            <div class="plan-card">
+                <div class="plan-header voyager">
+                    <div class="icon dark">D</div>
+                    <h3>VOYAGER</h3>
+                    <p class="strike">From $17.37</p>
+                    <h2>$15.98</h2>
+                    <span>Total Cost</span>
+                </div>
+
+                <div class="plan-details">
+                    <div class="detail-row">
+                        <div class="label">Cancellation or trip interruption ⓘ</div>
+                        <div class="cell">$1,000</div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Luggage and personal effects ⓘ</div>
+                        <div class="cell">$500</div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Travel Delay ⓘ</div>
+                        <div class="cell muted">Not available</div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Personal Liability ⓘ</div>
+                        <div class="cell muted">Not available</div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label section">Optional Cover</div>
+                        <div class="cell muted">Not available</div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Rental Vehicle Excess ⓘ</div>
+                        <div class="cell muted">Not available</div>
+                    </div>
+                </div>
+
+                <div class="cell">
+                    <button class="btn dark">CHOOSE PLAN</button>
+                    <p class="link">View Policy Information</p>
+                </div>
+            </div>
+
+            <!-- VOYAGER PLUS PLAN CARD -->
+            <div class="plan-card">
+                <div class="plan-header plus">
+                    <div class="icon gold">D</div>
+                    <h3>VOYAGER PLUS</h3>
+                    <p class="strike">From $44.94</p>
+                    <h2>$41.34</h2>
+                    <span>Total Cost</span>
+                </div>
+
+                <div class="plan-details">
+                    <div class="detail-row">
+                        <div class="label">Cancellation or trip interruption ⓘ</div>
+                        <div class="cell">
+                            <select>
+                                <option>$4,000</option>
+                                <option>$3,000</option>
+                                <option>$2,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Luggage and personal effects ⓘ</div>
+                        <div class="cell">
+                            <select>
+                                <option>$1,000</option>
+                                <option>$750</option>
+                                <option>$500</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Travel Delay ⓘ</div>
+                        <div class="cell">$1,000</div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Personal Liability ⓘ</div>
+                        <div class="cell">$2,500,000</div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label section">Optional Cover</div>
+                        <div class="cell">
+                            <select>
+                                <option>Not Selected</option>
+                                <option>Snow Sports</option>
+                                <option>Adventure Activities</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="label">Rental Vehicle Excess ⓘ</div>
+                        <div class="cell">
+                            <select>
+                                <option>Not Selected</option>
+                                <option>$5,000</option>
+                                <option>$7,500</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell">
+                    <button class="btn gold">CHOOSE PLAN</button>
+                    <p class="link">View Policy Information</p>
+                </div>
+
+                <div class="show-all">
+                    <p class="link">Show all benefits</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        ©2025 Logo Ipsum. All Rights Reserved.
+        <span>Privacy Policy | Terms & Conditions</span>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

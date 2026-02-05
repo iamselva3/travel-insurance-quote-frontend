@@ -1,0 +1,397 @@
+/* Mobile Responsive Styles for Travel Insurance Quote Page */
+
+@media only screen and (max-width: 768px) {
+
+    /* Hide desktop view, show mobile view */
+    .desktop-view {
+        display: none !important;
+    }
+
+    .mobile-view {
+        display: block !important;
+    }
+
+    /* Reset page container */
+    .page-container {
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    /* TOP BAR - Mobile */
+    .top-bar {
+        padding: 0 16px;
+        height: 56px;
+    }
+
+    .back {
+        font-size: 14px;
+    }
+
+    .back span {
+        display: inline;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .logo img {
+        height: 20px;
+    }
+
+    /* STEPPER - Mobile horizontal scroll */
+    .stepper {
+        padding: 20px 8px 16px;
+        overflow-x: auto;
+        margin-bottom: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .stepper .line {
+        top: 32px;
+        left: 40px;
+        right: 40px;
+    }
+
+    .step {
+        font-size: 11px;
+        min-width: 70px;
+    }
+
+    .step span {
+        display: block;
+        margin-top: 4px;
+    }
+
+    .circle {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    /* SUMMARY - Stack vertically */
+    .summary {
+        flex-direction: column;
+        padding: 16px;
+        gap: 8px;
+        font-size: 13px;
+        background: white;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .summary>div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .edit {
+        margin-left: auto;
+        color: #3b82f6;
+        font-weight: 500;
+        padding: 2px 12px;
+        background: #eff6ff;
+        border-radius: 4px;
+        border: 1px solid #bfdbfe;
+    }
+
+    /* PLANS GRID - Mobile card layout */
+    .plans-grid {
+        display: block;
+        background: #f5f6f8;
+        border: none;
+        padding: 16px;
+    }
+
+    /* Mobile card structure - each plan is a complete card */
+    .plan-card {
+        background: white;
+        border: 1px solid #e6e6e6;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Plan header inside card */
+    .plan-card .plan-header {
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 24px 20px;
+        box-shadow: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .plan-card .plan-header:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .plan-card .plan-header.voyager {
+        background: #f8f9fa;
+    }
+
+    .plan-card .plan-header.plus {
+        background: white;
+    }
+
+    .plan-header h3 {
+        margin: 10px 0 8px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .plan-header h2 {
+        margin: 5px 0;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .plan-card .plan-header.voyager h2 {
+        color: #0c2d57;
+    }
+
+    .plan-card .plan-header.plus h2 {
+        color: #f5a623;
+    }
+
+    .plan-header .strike {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .plan-header>span {
+        font-size: 12px;
+        color: #666;
+    }
+
+    .plan-header p.subtext {
+        font-size: 10px;
+        margin-top: 8px;
+    }
+
+    /* Plan details container */
+    .plan-details {
+        background: white;
+    }
+
+    /* Detail rows */
+    .detail-row {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .detail-row:last-child {
+        border-bottom: none;
+    }
+
+    /* Labels */
+    .detail-row .label {
+        background: transparent;
+        padding: 14px 16px 6px;
+        border-bottom: none;
+        font-size: 13px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .detail-row .label.section {
+        background: #f8f9fa;
+        font-weight: 600;
+        padding: 14px 16px;
+        color: #0c2d57;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    /* Cells */
+    .detail-row .cell {
+        padding: 0 16px 14px;
+        text-align: left;
+        border-bottom: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #0c2d57;
+    }
+
+    .detail-row .cell.muted {
+        color: #999;
+        font-weight: 400;
+    }
+
+    .detail-row .cell select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        background: white;
+        color: #0c2d57;
+        font-weight: 500;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%230c2d57" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        background-size: 20px;
+        padding-right: 36px;
+    }
+
+    /* Buttons in card */
+    .plan-card>.cell {
+        padding: 16px;
+        border-top: 1px solid #f0f0f0;
+        background: #fafafa;
+    }
+
+    .plan-card .btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .plan-card .btn.dark {
+        background: #0c2d57;
+        color: white;
+    }
+
+    .plan-card .btn.dark:active {
+        background: #0a2444;
+    }
+
+    .plan-card .btn.gold {
+        background: #f5a623;
+        color: white;
+    }
+
+    .plan-card .btn.gold:active {
+        background: #e09515;
+    }
+
+    .plan-card .link {
+        text-align: center;
+        margin: 0;
+        font-size: 13px;
+        color: #3b82f6;
+        cursor: pointer;
+    }
+
+    /* Show all benefits */
+    .show-all {
+        padding: 12px 16px;
+        text-align: center;
+        background: white;
+    }
+
+    .show-all .link {
+        color: #3b82f6;
+        font-weight: 500;
+    }
+
+    /* Footer - stack on mobile */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    footer span {
+        display: block;
+        margin-top: 4px;
+    }
+
+    /* Info icons on mobile */
+    .info-icon {
+        font-size: 10px;
+    }
+}
+
+/* Extra small devices (phones in portrait, less than 576px) */
+@media only screen and (max-width: 576px) {
+    .top-bar {
+        padding: 0 12px;
+    }
+
+    .stepper {
+        padding: 16px 4px 12px;
+    }
+
+    .step {
+        font-size: 10px;
+        min-width: 60px;
+    }
+
+    .summary {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .plans-grid {
+        padding: 12px;
+    }
+
+    .plan-header h2 {
+        font-size: 28px;
+    }
+}
+
+/* Landscape orientation fixes */
+@media only screen and (max-height: 600px) and (orientation: landscape) {
+    .stepper {
+        padding: 12px 8px;
+    }
+
+    .plan-header {
+        padding: 16px;
+    }
+}
+
+/* Extra small devices (phones in portrait, less than 576px) */
+@media only screen and (max-width: 576px) {
+    .top-bar {
+        padding: 0 12px;
+    }
+
+    .stepper {
+        padding: 16px 4px 12px;
+    }
+
+    .step {
+        font-size: 10px;
+        min-width: 60px;
+    }
+
+    .summary {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .plans-grid {
+        padding: 12px;
+    }
+
+    .plan-header h2 {
+        font-size: 24px;
+    }
+}
+
+/* Landscape orientation fixes */
+@media only screen and (max-height: 600px) and (orientation: landscape) {
+    .stepper {
+        padding: 12px 8px;
+    }
+
+    .plan-header {
+        padding: 16px;
+    }
+}

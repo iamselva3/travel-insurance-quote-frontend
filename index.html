@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Find the right travel insurance plan for you" />
+    <title>Travel Insurance</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="container header-content">
+            <!-- <div class="logo">logoipsum</div> -->
+            <img src="assets/logo-6.png" class="logo" alt="logo" />
+
+            <nav class="nav">
+                <a href="#">Travel Insurance</a>
+                <a href="#">Emergency Assistance</a>
+                <a href="#">Customer Service</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="hero">
+
+
+        <div class="container hero-center">
+
+            <!-- Headline -->
+            <section class="hero-text-center">
+                <p class="tagline">
+                    BREAKING THE LIMITS OF TRADITIONAL TRAVEL INSURANCE
+                </p>
+                <h1>Find the Right Plan for You</h1>
+            </section>
+
+            <!-- Form Card -->
+            <section class="quote-card">
+                <div class="trip-type">
+                    <button type="button" id="singleTrip" class="active">
+                        Single Trip
+                    </button>
+                    <button type="button" id="multiTrip">
+                        Multi Trip
+                    </button>
+                </div>
+
+                <form>
+                    <div class="dropdown-wrapper">
+                        <label>Where are you travelling?</label>
+
+                        <input type="text" id="countrySearch" placeholder="Type or choose your destinations"
+                            autocomplete="off" />
+
+
+                        <ul id="countryOptions" class="dropdown-options">
+                        </ul>
+
+                        <div id="selectedCountries" class="selected-tags"></div>
+
+
+                    </div>
+
+
+
+                    <label for="startDate">When do you leave?</label>
+                    <input type="date" id="startDate" name="startDate" />
+
+                    <label for="endDate">When do you return?</label>
+                    <input type="date" id="endDate" name="endDate" />
+
+
+                    <label>Current age of all travellers?</label>
+
+                    <div class="ages-wrapper">
+                        <input type="number" min="0" max="120" class="age-input" placeholder="Age" />
+                        <button type="button" class="add-age">+</button>
+                    </div>
+
+                    <input type="text" style="margin-top: 10px;" placeholder="Promo Code" />
+
+                    <button class="quote-btn" type="submit">
+                            GET A QUOTE
+                        </button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+
+    <div id="megaOverlay" class="mega-overlay"></div>
+
+
+    <div id="megaMenu" class="mega-menu">
+        <div class="mega-container">
+            <div class="mega-left">
+                <img src="assets/Nav.png" alt="Travel Insurance">
+            </div>
+
+            <div class="mega-center">
+                <h3>Travel Insurance</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vestibulum quis purus neque.
+                </p>
+                <a href="./quote.html"><button class="quote-btn">GET A QUOTE</button></a>
+            </div>
+
+            <div class="mega-right">
+                <ul>
+                    <li>Plans</li>
+                    <li>Upgrades</li>
+                    <li>Traveller Type</li>
+                    <li>Trip Type</li>
+                    <li>Benefits</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div id="mobileNavMenu" class="mobile-nav-menu">
+        <div class="mobile-nav-header">
+            <button id="mobileNavClose" class="mobile-nav-close">✕</button>
+        </div>
+        <nav class="mobile-nav-links">
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    Travel Insurance
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-nav-dropdown">
+                    <a href="#" class="mobile-nav-sublink">Plans</a>
+                    <a href="#" class="mobile-nav-sublink">Upgrades</a>
+                    <a href="#" class="mobile-nav-sublink">Traveller Type</a>
+                    <a href="#" class="mobile-nav-sublink">Trip Type</a>
+                    <a href="#" class="mobile-nav-sublink">Benefits</a>
+                </div>
+            </div>
+
+
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    Emergency Assistance
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-nav-dropdown">
+                    <a href="#" class="mobile-nav-sublink">Emergency Services</a>
+                    <a href="#" class="mobile-nav-sublink">24/7 Support</a>
+                    <a href="#" class="mobile-nav-sublink">Medical Assistance</a>
+                    <a href="#" class="mobile-nav-sublink">Travel Assistance</a>
+                </div>
+            </div>
+
+
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link mobile-nav-toggle">
+                    Customer Service
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-nav-dropdown">
+                    <a href="#" class="mobile-nav-sublink">Contact Us</a>
+                    <a href="#" class="mobile-nav-sublink">FAQ</a>
+                    <a href="#" class="mobile-nav-sublink">Claims</a>
+                    <a href="#" class="mobile-nav-sublink">Policy Management</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <button id="mobileMenuToggle" class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+
+</html>
