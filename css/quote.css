@@ -61,7 +61,7 @@ body {
     width: auto;
 }
 
-
+/* 
 .stepper {
     position: relative;
     background: #fff;
@@ -75,11 +75,30 @@ body {
 
 .stepper .line {
     position: absolute;
-    top: 45px;
-    left: calc(14.5% + 8px);
-    right: calc(14.5% + 8px);
+    top: 30px;
+    left: calc(11.5% + 10px);
+    right: calc(11.5% + 10px);
     height: 1px;
     background: #cbd5e0;
+    z-index: 0;
+} */
+
+
+.stepper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stepper .line {
+    position: absolute;
+    top: 35%;
+    left: 13%;
+    right: 13%;
+    height: 1px;
+    background: #cbd5e0;
+    transform: translateY(-50%);
     z-index: 0;
 }
 

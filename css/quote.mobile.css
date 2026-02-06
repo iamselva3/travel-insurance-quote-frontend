@@ -1,7 +1,6 @@
-
 @media only screen and (max-width: 768px) {
 
-    
+
     .desktop-view {
         display: none !important;
     }
@@ -10,14 +9,14 @@
         display: block !important;
     }
 
- 
+
     .page-container {
         padding: 0;
         margin: 0;
         max-width: 100%;
     }
 
-   
+
     .top-bar {
         padding: 0 16px;
         height: 56px;
@@ -39,7 +38,7 @@
         height: 20px;
     }
 
-  
+
     .stepper {
         padding: 20px 8px 16px;
         overflow-x: auto;
@@ -113,7 +112,7 @@
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
 
-    
+
     .plan-card .plan-header {
         border: none;
         border-radius: 0;
@@ -176,7 +175,7 @@
         background: white;
     }
 
-    
+
     .detail-row {
         border-bottom: 1px solid #f0f0f0;
     }
@@ -185,7 +184,7 @@
         border-bottom: none;
     }
 
-   
+
     .detail-row .label {
         background: transparent;
         padding: 14px 16px 6px;
@@ -203,7 +202,7 @@
         border-bottom: 1px solid #e6e6e6;
     }
 
-   
+
     .detail-row .cell {
         padding: 0 16px 14px;
         text-align: left;
@@ -236,7 +235,7 @@
         padding-right: 36px;
     }
 
-    
+
     .plan-card>.cell {
         padding: 16px;
         border-top: 1px solid #f0f0f0;
@@ -281,7 +280,7 @@
         cursor: pointer;
     }
 
-   
+
     .show-all {
         padding: 12px 16px;
         text-align: center;
