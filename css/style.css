@@ -84,9 +84,8 @@ body {
     font-size: 2.5rem;
 }
 
-.quote-card {
-    width: 100%;
-    max-width: 420px;
+.hero-text-center .secondary-heading {
+    font-size: 1.7rem;
 }
 
 
@@ -111,15 +110,23 @@ body {
 
 
 .quote-card {
+    width: 100%;
+    max-width: 390px;
     background: #fff;
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+
+
 .trip-type {
     display: flex;
-    margin-bottom: 1rem;
+    /* align-items: start; */
+    width: 280px;
+    /* justify-content: start; */
+    /* margin-right: 100px; */
+    /* margin-bottom: 1rem; */
 }
 
 .trip-type button {
@@ -127,7 +134,8 @@ body {
     padding: 0.5rem;
     border: none;
     cursor: pointer;
-    background: #eee;
+    height: 40px;
+    background: #FFFFFF;
 }
 
 .trip-type .active {
@@ -307,9 +315,9 @@ form input {
     margin: auto;
     padding: 2.5rem 2rem;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 1fr 1.5fr auto 1fr;
     gap: 3rem;
-    align-items: start;
+    align-items: center;
 }
 
 .mega-left img {
@@ -321,6 +329,7 @@ form input {
 
 .mega-center {
     padding-top: 0.5rem;
+    /* margin-top: 2rem; */
 }
 
 .mega-center h3 {
@@ -344,14 +353,25 @@ form input {
 
 .mega-right ul {
     list-style: none;
+    /* margin-top: 40px; */
 }
+
+.vertical-line {
+    width: 1px;
+    background: #ddd;
+    height: 120px;
+    justify-self: center;
+}
+
+
 
 .mega-right li {
     margin-bottom: 0.75rem;
-    padding: 0.5rem 0;
+    padding: 1px;
     cursor: pointer;
-    font-size: 0.95rem;
-    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #002B45;
     transition: color 0.2s;
 }
 
@@ -417,13 +437,13 @@ a {
 
 @media (max-width: 768px) {
 
-    
+
     body.mega-open .header {
         background-color: #000;
         padding-bottom: 0;
     }
 
-      
+
     .mega-menu {
         position: fixed;
         top: 0;
@@ -440,12 +460,12 @@ a {
         transform: translateY(0);
     }
 
-   
+
     .mega-overlay {
         z-index: 90;
     }
 
-       
+
     .mega-mobile-header {
         display: flex;
         justify-content: space-between;
@@ -461,7 +481,7 @@ a {
         cursor: pointer;
     }
 
-    
+
     .mega-container {
         display: block;
         padding: 1rem;
@@ -637,13 +657,13 @@ a {
         display: none;
     }
 
-    
+
     body.mobile-menu-open .mobile-menu-toggle {
         opacity: 0;
         visibility: hidden;
     }
 
-   
+
     .header-content {
         justify-content: center;
     }

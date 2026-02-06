@@ -8,9 +8,11 @@
     <title>Travel Insurance</title>
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
     <header class="header">
@@ -32,24 +34,23 @@
 
         <div class="container hero-center">
 
-            <!-- Headline -->
             <section class="hero-text-center">
                 <p class="tagline">
                     BREAKING THE LIMITS OF TRADITIONAL TRAVEL INSURANCE
                 </p>
-                <h1>Find the Right Plan for You</h1>
+                <h1 class="secondary-heading">Find the Right Plan for You</h1>
             </section>
 
-            <!-- Form Card -->
+
+            <div class="trip-type">
+                <button type="button" id="singleTrip" class="active">
+                    Single Trip
+                </button>
+                <button type="button" id="multiTrip">
+                    Multi Trip
+                </button>
+            </div>
             <section class="quote-card">
-                <div class="trip-type">
-                    <button type="button" id="singleTrip" class="active">
-                        Single Trip
-                    </button>
-                    <button type="button" id="multiTrip">
-                        Multi Trip
-                    </button>
-                </div>
 
                 <form>
                     <div class="dropdown-wrapper">
@@ -70,10 +71,10 @@
 
 
                     <label for="startDate">When do you leave?</label>
-                    <input type="date" id="startDate" name="startDate" />
+                    <input type="date" id="startDate" name="startDate" placeholder="DD/MM/YYYY" />
 
                     <label for="endDate">When do you return?</label>
-                    <input type="date" id="endDate" name="endDate" />
+                    <input type="date" id="endDate" name="endDate" placeholder="DD/MM/YYYY" />
 
 
                     <label>Current age of all travellers?</label>
@@ -86,8 +87,8 @@
                     <input type="text" style="margin-top: 10px;" placeholder="Promo Code" />
 
                     <button class="quote-btn" type="submit">
-                            GET A QUOTE
-                        </button>
+                        GET A QUOTE
+                    </button>
                 </form>
             </section>
 
@@ -113,6 +114,7 @@
                 <a href="./quote.html"><button class="quote-btn">GET A QUOTE</button></a>
             </div>
 
+            <div class="vertical-line"></div>
             <div class="mega-right">
                 <ul>
                     <li>Plans</li>
