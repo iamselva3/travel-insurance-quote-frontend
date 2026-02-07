@@ -47,9 +47,9 @@
     }
 
     .stepper .line {
-        top: 21px;
-        left: 40px;
-        right: 40px;
+        top: 25px;
+        left: 45px;
+        right: 45px;
     }
 
     .step {
@@ -348,6 +348,19 @@
     .plan-header h2 {
         font-size: 28px;
     }
+
+    .mobile-view .plan-details,
+    .mobile-view .plan-card>.cell,
+    .mobile-view .show-all {
+        display: none;
+    }
+
+    .mobile-view .plan-card.active .plan-details,
+    .mobile-view .plan-card.active>.cell,
+    .mobile-view .plan-card.active .show-all {
+        display: block;
+    }
+
 }
 
 
@@ -359,6 +372,10 @@
     .plan-header {
         padding: 16px;
     }
+
+    .stepper.line {
+        background-color: red;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -369,6 +386,7 @@
     .stepper {
         padding: 16px 4px 12px;
     }
+
 
     .step {
         font-size: 10px;
