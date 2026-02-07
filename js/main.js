@@ -302,10 +302,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
-    const travelLink = document.querySelector(".nav a");
-    const megaMenu = document.getElementById("megaMenu");
+    const navLinks = document.querySelectorAll(".nav a");
     const megaOverlay = document.getElementById("megaOverlay");
     const body = document.body;
 
@@ -317,15 +315,16 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.remove("mega-open");
     }
 
-
-    travelLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        openMegaMenu();
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            openMegaMenu();
+        });
     });
 
-
-    megaOverlay.addEventListener("click", closeMegaMenu);
-
+    if (megaOverlay) {
+        megaOverlay.addEventListener("click", closeMegaMenu);
+    }
 
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeMegaMenu();
