@@ -308,6 +308,18 @@
     .info-icon {
         font-size: 10px;
     }
+
+    .mobile-view .plan-details,
+    .mobile-view .plan-card>.cell,
+    .mobile-view .show-all {
+        display: none;
+    }
+
+    .mobile-view .plan-card.active .plan-details,
+    .mobile-view .plan-card.active>.cell,
+    .mobile-view .plan-card.active .show-all {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 576px) {

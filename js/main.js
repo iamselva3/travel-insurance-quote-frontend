@@ -2,15 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const singleBtn = document.getElementById("singleTrip");
     const multiBtn = document.getElementById("multiTrip");
 
-    singleBtn.addEventListener("click", function () {
-        singleBtn.classList.add("active");
-        multiBtn.classList.remove("active");
-    });
+    if (singleBtn && multiBtn) {
+        singleBtn.addEventListener("click", function () {
+            singleBtn.classList.add("active");
+            multiBtn.classList.remove("active");
+        });
 
-    multiBtn.addEventListener("click", function () {
-        multiBtn.classList.add("active");
-        singleBtn.classList.remove("active");
-    });
+        multiBtn.addEventListener("click", function () {
+            multiBtn.classList.add("active");
+            singleBtn.classList.remove("active");
+        });
+    }
+
 });
 
 
@@ -161,11 +164,13 @@ const countries = [
 ];
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("countrySearch");
     const optionsBox = document.getElementById("countryOptions");
     const tagsBox = document.getElementById("selectedCountries");
+
+
+    if (!input || !optionsBox || !tagsBox) return;
 
     const selected = new Set();
 
@@ -182,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .filter(c => !popularDestinations.includes(c))
             .filter(c => c.toLowerCase().includes(value));
 
-
         if (filteredPopular.length === 0 && filteredCountries.length === 0) {
             const li = document.createElement("li");
             li.textContent = "Destination not found";
@@ -191,7 +195,6 @@ document.addEventListener("DOMContentLoaded", function () {
             optionsBox.appendChild(li);
             return;
         }
-
 
         if (filteredPopular.length) {
             const heading = document.createElement("li");
@@ -210,7 +213,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-
         if (filteredPopular.length && filteredCountries.length) {
             const divider = document.createElement("li");
             divider.textContent = "────────";
@@ -220,15 +222,12 @@ document.addEventListener("DOMContentLoaded", function () {
             optionsBox.appendChild(divider);
         }
 
-
         filteredCountries.forEach(country => {
             const li = document.createElement("li");
             li.textContent = country;
             optionsBox.appendChild(li);
         });
     }
-
-
 
     renderOptions();
 
@@ -277,7 +276,6 @@ document.addEventListener("DOMContentLoaded", function () {
             optionsBox.style.display = "none";
         }
     });
-
 
     window.getSelectedCountries = () => Array.from(selected);
 });
@@ -661,10 +659,8 @@ const tripData = {
     ages: [23]
 };
 
-
 document.addEventListener('DOMContentLoaded', function () {
     populateSummary();
-    handleResponsiveViews();
 });
 
 
@@ -686,27 +682,6 @@ function populateSummary() {
     }
 }
 
-
-function handleResponsiveViews() {
-    const desktopView = document.querySelector('.desktop-view');
-    const mobileView = document.querySelector('.mobile-view');
-
-    function updateView() {
-        if (window.innerWidth <= 768) {
-            if (desktopView) desktopView.style.display = 'none';
-            if (mobileView) mobileView.style.display = 'block';
-        } else {
-            if (desktopView) desktopView.style.display = 'grid';
-            if (mobileView) mobileView.style.display = 'none';
-        }
-    }
-
-
-    updateView();
-
-
-    window.addEventListener('resize', updateView);
-}
 
 
 document.addEventListener('click', function (e) {
@@ -779,13 +754,15 @@ if (stepper) {
     });
 }
 
-flatpickr("#startDate", {
-    dateFormat: "d/m/Y"
-});
+if (typeof flatpickr !== "undefined") {
+    if (document.getElementById("startDate")) {
+        flatpickr("#startDate", { dateFormat: "d/m/Y" });
+    }
+    if (document.getElementById("endDate")) {
+        flatpickr("#endDate", { dateFormat: "d/m/Y" });
+    }
+}
 
-flatpickr("#endDate", {
-    dateFormat: "d/m/Y"
-});
 
 
 const header = document.querySelector(".header");
@@ -796,4 +773,26 @@ window.addEventListener("scroll", () => {
     } else {
         header.classList.remove("scrolled");
     }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (!isMobile) return;
+
+    const planCards = document.querySelectorAll(".mobile-view .plan-card");
+
+    planCards.forEach((card) => {
+        const header = card.querySelector(".plan-header");
+
+        header.addEventListener("click", () => {
+            const isActive = card.classList.contains("active");
+
+            planCards.forEach(c => c.classList.remove("active"));
+
+            if (!isActive) {
+                card.classList.add("active");
+            }
+        });
+    });
 });

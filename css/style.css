@@ -132,26 +132,32 @@ body {
 
 .trip-type {
     display: flex;
-    /* align-items: start; */
     width: 280px;
-    /* justify-content: start; */
-    /* margin-right: 100px; */
-    /* margin-bottom: 1rem; */
+    align-self: flex-start;
+    margin-left: calc((100% - 385px) / 2);
 }
 
 .trip-type button {
     flex: 1;
-    padding: 0.5rem;
-    border: none;
-    cursor: pointer;
     height: 40px;
-    background: #FFFFFF;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+
+.trip-type button:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+.trip-type button:last-child {
+    border-radius: 0 6px 6px 0;
 }
 
 .trip-type .active {
     background: #fbbf24;
-    font-weight: bold;
+    border-color: #fbbf24;
 }
+
 
 form label {
     font-size: 0.75rem;
@@ -332,7 +338,8 @@ form input {
 
 .mega-left img {
     width: 100%;
-    max-width: 280px;
+    max-width: 200px;
+    height: 150px;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -357,7 +364,8 @@ form input {
 
 .mega-center .quote-btn {
     width: auto;
-    padding: 0.75rem 2rem;
+    font-size: 10px;
+    padding: 0.55rem 1.5rem;
     margin-top: 0;
 }
 
@@ -369,7 +377,7 @@ form input {
 .vertical-line {
     width: 1px;
     background: #ddd;
-    height: 120px;
+    height: 150px;
     justify-self: center;
 }
 
@@ -445,13 +453,18 @@ a {
     }
 }
 
-
 @media (max-width: 768px) {
 
 
     body.mega-open .header {
         background-color: #000;
         padding-bottom: 0;
+    }
+
+    .trip-type {
+        margin-left: -10px;
+        width: 100%;
+        padding: 0 16px;
     }
 
 
@@ -620,7 +633,7 @@ a {
 
 .mobile-menu-toggle {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 1rem;
     left: 1rem;
     z-index: 40;
