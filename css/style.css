@@ -754,6 +754,13 @@ a {
 }
 
 
+@media (max-width: 320px) {
+    .trip-type {
+        margin-left: -20px;
+    }
+
+}
+
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: flex;
