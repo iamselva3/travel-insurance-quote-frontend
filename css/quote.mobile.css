@@ -1,6 +1,34 @@
 @media only screen and (max-width: 768px) {
 
 
+
+
+    /* ============= FOOTER POSITION FIX ============= */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .page-container {
+        flex: 1 0 auto;
+        width: 100%;
+    }
+
+    footer {
+        flex-shrink: 0;
+        width: 100%;
+        margin-top: auto;
+    }
+
     .desktop-view {
         display: none !important;
     }
@@ -43,7 +71,9 @@
         padding: 20px 8px 16px;
         overflow-x: auto;
         margin-bottom: 0;
+        background-color: white;
         -webkit-overflow-scrolling: touch;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .stepper .line {
@@ -54,7 +84,21 @@
 
     .step {
         font-size: 11px;
+        padding: 10px 50px;
+        top: 10%;
         min-width: 70px;
+
+    }
+
+    .stepper .line {
+        position: absolute;
+        top: 35%;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: #cbd5e0;
+        transform: translateY(-50%);
+        z-index: 0;
     }
 
     .step span {
@@ -98,7 +142,7 @@
 
     .plans-grid {
         display: block;
-        background: #f5f6f8;
+        background: white;
         border: none;
         padding: 16px;
     }
@@ -109,13 +153,14 @@
         border-radius: 12px;
         margin-bottom: 20px;
         overflow: hidden;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        /* box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); */
     }
 
 
     .plan-card .plan-header {
         border: none;
         border-radius: 0;
+        background-color: white;
         margin: 0;
         padding: 24px 20px;
         box-shadow: none;
@@ -128,7 +173,7 @@
     }
 
     .plan-card .plan-header.voyager {
-        background: #f8f9fa;
+        background: white;
     }
 
     .plan-card .plan-header.plus {
@@ -195,7 +240,7 @@
     }
 
     .detail-row .label.section {
-        background: #f8f9fa;
+        background: #f0f0f0;
         font-weight: 600;
         padding: 14px 16px;
         color: #0c2d57;
@@ -223,7 +268,7 @@
         border: 1px solid #ddd;
         border-radius: 6px;
         font-size: 14px;
-        background: white;
+        background: #f0f0f0;
         color: #0c2d57;
         font-weight: 500;
         appearance: none;
@@ -239,7 +284,7 @@
     .plan-card>.cell {
         padding: 16px;
         border-top: 1px solid #f0f0f0;
-        background: #fafafa;
+        background: #f0f0f0;
     }
 
     .plan-card .btn {
@@ -280,6 +325,445 @@
         cursor: pointer;
     }
 
+    .summary {
+        background: #f2f3f5;
+        padding: 20px 16px;
+        display: block;
+        border-bottom: 1px solid #e5e7eb;
+        position: relative;
+    }
+
+    .summary::before {
+        content: "Trip Details";
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1f2a44;
+        margin-bottom: 16px;
+    }
+
+    .summary>div:not(.edit) {
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    .summary strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        color: #1f2a44;
+        margin-bottom: 4px;
+    }
+
+    .summary span:not(.edit) {
+        display: block;
+        font-size: 15px;
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+    .summary .edit {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+        display: inline-block;
+        width: auto;
+        font-size: 14px;
+        font-weight: 600;
+        color: #2563eb;
+        padding: 6px 14px;
+        background: #eaf2ff;
+        border: 1px solid #93c5fd;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+
+    .desktop-view {
+        display: none !important;
+    }
+
+    .mobile-view {
+        display: block !important;
+    }
+
+    .plans-grid {
+        background: white;
+        box-shadow: none;
+        padding: 12px;
+    }
+
+    .plan-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+
+    .mobile-view .plan-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 16px;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e7eb;
+        background: white;
+    }
+
+   
+    .mobile-view .plan-header .icon,
+    .mobile-view .plan-header .strike,
+    .mobile-view .plan-header span,
+    .mobile-view .plan-header .subtext {
+        display: none;
+    }
+
+    .mobile-view .plan-header h3 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1f2a44;
+    }
+
+    .mobile-view .plan-header h2 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #1f2a44;
+    }
+
+    .mobile-view .plan-header.plus h2 {
+        color: #f5a623;
+    }
+
+    .mobile-view .plan-details,
+    .mobile-view .plan-card>.cell,
+    .mobile-view .show-all {
+        display: none;
+    }
+
+    .mobile-view .plan-card.active .plan-details,
+    .mobile-view .plan-card.active>.cell,
+    .mobile-view .plan-card.active .show-all {
+        display: block;
+    }
+
+    
+    .mobile-view .plan-card.active {
+        background: #f8f9fc;
+    }
+
+    .mobile-view .plan-card.active .plan-details {
+        background: #f8f9fc;
+    }
+
+    .mobile-view .plan-card.active .plan-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        background: white;
+        border-bottom: none;
+    }
+
+    .mobile-view .plan-card.active .plan-header .icon {
+        display: block !important;
+        margin-bottom: 12px;
+    }
+
+    .mobile-view .plan-card.active .plan-header .icon img {
+        width: 48px;
+        height: 48px;
+    }
+
+    
+    .mobile-view .plan-card.active .plan-header h3 {
+        display: block !important;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a2e4f;
+        margin-bottom: 8px !important;
+    }
+
+    .mobile-view .plan-card.active .plan-header .strike {
+        display: block !important;
+        font-size: 14px;
+        color: #94a3b8;
+        text-decoration: line-through;
+        margin-bottom: 4px;
+    }
+
+    
+    .mobile-view .plan-card.active .plan-header h2 {
+        display: block !important;
+        font-size: 36px;
+        font-weight: 800;
+        color: #1a2e4f;
+        margin: 0 !important;
+    }
+
+    .mobile-view .plan-card.active .plan-header.plus h2 {
+        color: #f5a623;
+    }
+
+    
+    .mobile-view .plan-card.active .plan-header>span {
+        display: block !important;
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 4px;
+    }
+
+    
+    .mobile-view .plan-card.active .plan-header {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    
+    .mobile-view .plan-card.active .plan-details::before {
+        content: "Policy benefits listed below, per traveller limits apply";
+        display: block;
+        padding: 20px 20px 12px 20px;
+        font-size: 13px;
+        color: #475569;
+        background: #f8f9fc;
+        border-bottom: 1px solid #e2e8f0;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+    }
+
+    
+    .mobile-view .plan-card.active .detail-row {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 16px 20px !important;
+        margin: 0 !important;
+        background: #f8f9fc;
+        border-bottom: 1px solid #edf2f7;
+    }
+
+        
+    .mobile-view .plan-card.active .detail-row .label {
+        font-size: 15px !important;
+        color: #1e293b !important;
+        font-weight: 500 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+    }
+
+    
+    .mobile-view .plan-card.active .detail-row .cell {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        color: #0f172a !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    
+    .mobile-view .plan-card.active .detail-row .cell.muted {
+        color: #94a3b8 !important;
+        font-weight: 400 !important;
+    }
+
+   
+    .mobile-view .plan-card.active .detail-row .label.section {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: #0c2d57 !important;
+        padding: 20px 20px 8px 20px !important;
+        margin: -16px -20px 0 -20px !important;
+        background: #f8f9fc !important;
+        border-bottom: none !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+   
+    .mobile-view .plan-card.active .detail-row .label.section+.cell {
+        display: none !important;
+    }
+
+   
+    .mobile-view .plan-card.active .detail-row:has(.label.section) {
+        display: block !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+   
+    .mobile-view .plan-card.active .detail-row:has(.label:contains("Rental Vehicle Excess")) {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+   
+    .mobile-view .plan-card.active .detail-row .cell select {
+        width: auto !important;
+        min-width: 150px !important;
+        padding: 10px 36px 10px 14px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+        color: #0f172a !important;
+        font-weight: 500 !important;
+        background-color: white !important;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23475671" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') !important;
+        background-position: right 12px center !important;
+    }
+
+   
+    .mobile-view .plan-card.active>.cell {
+        padding: 24px 20px !important;
+        background: #f8f9fc !important;
+        border-top: 1px solid #e2e8f0 !important;
+        text-align: center !important;
+    }
+
+    
+    .mobile-view .plan-card.active .btn.gold {
+        background: #f5a623 !important;
+        color: white !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto 12px auto !important;
+        padding: 16px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        border-radius: 40px !important;
+        border: none !important;
+        display: block !important;
+        letter-spacing: 0.5px !important;
+        box-shadow: 0 2px 4px rgba(245, 166, 35, 0.2) !important;
+    }
+
+    
+    .mobile-view .plan-card.active .btn.dark {
+        background: #0c2d57 !important;
+        color: white !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto 12px auto !important;
+        padding: 16px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        border-radius: 40px !important;
+        border: none !important;
+        display: block !important;
+        letter-spacing: 0.5px !important;
+    }
+
+        
+    .mobile-view .plan-card.active .link {
+        color: #2563eb !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        display: block !important;
+        margin-top: 8px !important;
+    }
+
+        
+    .mobile-view .plan-card.active .show-all {
+        padding: 16px 20px 28px !important;
+        text-align: center !important;
+        background: #f8f9fc !important;
+        border-top: 1px solid #e2e8f0 !important;
+    }
+
+    .mobile-view .plan-card.active .show-all .link {
+        color: #2563eb !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        display: inline-block !important;
+        border-bottom: 1px solid #2563eb !important;
+        padding-bottom: 2px !important;
+    }
+
+
+    .mobile-view .plan-card.active .detail-row .cell:not(.muted)::after {
+        content: none !important;
+    }
+
+    
+    .mobile-view .detail-row .cell:not(.muted)::after {
+        content: none !important;
+    }
+
+    
+
+        
+    .plan-details {
+        background: #fff;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .detail-row {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 12px 16px;
+    }
+
+    .detail-row:last-child {
+        border-bottom: none;
+    }
+
+    .detail-row .label {
+        font-size: 13px;
+        color: #333;
+        margin-bottom: 6px;
+    }
+
+    .detail-row .cell {
+        font-size: 14px;
+        font-weight: 600;
+        color: #0c2d57;
+    }
+
+    .detail-row .cell select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    
+    .plan-card>.cell {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .plan-card .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 4px;
+        margin-bottom: 8px;
+    }
+
+    .plan-card .btn.dark {
+        background: #0c2d57;
+        color: #fff;
+    }
+
+    .plan-card .btn.gold {
+        background: #f5a623;
+        color: #fff;
+    }
+
+    .plan-card .link {
+        font-size: 13px;
+        color: #2563eb;
+        text-align: center;
+    }
 
     .show-all {
         padding: 12px 16px;
@@ -309,7 +793,7 @@
         font-size: 10px;
     }
 
-    .mobile-view .plan-details,
+    /* .mobile-view .plan-details,
     .mobile-view .plan-card>.cell,
     .mobile-view .show-all {
         display: none;
@@ -319,7 +803,7 @@
     .mobile-view .plan-card.active>.cell,
     .mobile-view .plan-card.active .show-all {
         display: block;
-    }
+    } */
 }
 
 @media only screen and (max-width: 576px) {
@@ -329,6 +813,9 @@
 
     .stepper {
         padding: 16px 4px 12px;
+        background-color: white;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .step {
@@ -341,7 +828,7 @@
         font-size: 12px;
     }
 
-    .plans-grid {
+    /* .plans-grid {
         padding: 12px;
     }
 
@@ -359,7 +846,7 @@
     .mobile-view .plan-card.active>.cell,
     .mobile-view .plan-card.active .show-all {
         display: block;
-    }
+    } */
 
 }
 
@@ -385,8 +872,10 @@
 
     .stepper {
         padding: 16px 4px 12px;
+        background-color: white;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
-
 
     .step {
         font-size: 10px;
@@ -398,13 +887,13 @@
         font-size: 12px;
     }
 
-    .plans-grid {
+    /* .plans-grid {
         padding: 12px;
     }
 
     .plan-header h2 {
         font-size: 24px;
-    }
+    } */
 }
 
 
@@ -413,7 +902,230 @@
         padding: 12px 8px;
     }
 
-    .plan-header {
+    /* .plan-header {
         padding: 16px;
+    } */
+}
+
+/* @media only screen and (max-width: 1440px) {
+    .stepper .line {
+        position: absolute;
+        top: 35%;
+        left: 6%;
+        right: 6%;
+        height: 1px;
+        background: #cbd5e0;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+} */
+
+
+@media only screen and (max-width: 360px) {
+
+    .stepper {
+        padding: 14px 10px;
+        background-color: white;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .stepper .line {
+        top: 38%;
+        left: 12%;
+        right: 12%;
+    }
+
+    .step {
+        flex: 1;
+        padding: 8px 2px;
+        font-size: 9px;
+        min-width: 0;
+        /* allows shrinking */
+    }
+
+    .summary {
+        background: #f0f0f0;
+        padding: 20px 16px;
+        display: block;
+        border-bottom: 1px solid #e5e7eb;
+        position: relative;
+    }
+
+    .summary::before {
+        content: "Trip Details";
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1f2a44;
+        margin-bottom: 16px;
+    }
+
+    .summary>div:not(.edit) {
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    .summary strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        color: #1f2a44;
+        margin-bottom: 4px;
+    }
+
+    .summary span:not(.edit) {
+        display: block;
+        font-size: 15px;
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+    .summary .edit {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+        display: inline-block;
+        width: auto;
+        font-size: 14px;
+        font-weight: 600;
+        color: #2563eb;
+        padding: 6px 14px;
+        background: #eaf2ff;
+        border: 1px solid #93c5fd;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+
+    .step span {
+        font-size: 9px;
+        line-height: 1.1;
+    }
+
+    .circle {
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .stepper {
+        padding: 14px 10px;
+    }
+
+    .stepper .line {
+        top: 35%;
+        left: 10%;
+        right: 10%;
+    }
+
+    .step {
+        flex: 1;
+        padding: 8px 2px;
+        font-size: 9px;
+        min-width: 0;
+        /* allows shrinking */
+    }
+
+    .summary {
+        background: white;
+        padding: 20px 16px;
+        display: block;
+        border-bottom: 1px solid #e5e7eb;
+        position: relative;
+    }
+
+    .summary::before {
+        content: "Trip Details";
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1f2a44;
+        margin-bottom: 16px;
+    }
+
+    .summary>div:not(.edit) {
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    .summary strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        color: #1f2a44;
+        margin-bottom: 4px;
+    }
+
+    .summary span:not(.edit) {
+        display: block;
+        font-size: 15px;
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+    .summary .edit {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+        display: inline-block;
+        width: auto;
+        font-size: 14px;
+        font-weight: 600;
+        color: #2563eb;
+        padding: 6px 14px;
+        background: #eaf2ff;
+        border: 1px solid #93c5fd;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+
+    .step span {
+        font-size: 9px;
+        line-height: 1.1;
+    }
+
+    .circle {
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
+    .stepper {
+        padding: 16px 16px;
+    }
+
+    .stepper .line {
+        top: 38%;
+        left: 13%;
+        right: 13%;
+    }
+
+    .step {
+        flex: 1;
+        padding: 10px 4px;
+        font-size: 10px;
+        min-width: 0;
+    }
+
+    .step span {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .circle {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        margin-bottom: 6px;
     }
 }

@@ -60,21 +60,74 @@ body {
 
 .hero {
     position: relative;
+    /* min-height: 100vh; */
     min-height: 100vh;
+    padding: 280px 0 60px;
     padding-top: 50px;
     background: url("../assets/cover.jpg") center/cover no-repeat;
     display: flex;
-    /* align-items: center; */
 }
+
+.nav-arrow {
+    margin-left: 3px;
+    width: 10px;
+    margin-bottom: 1px;
+    height: 6px;
+}
+
+.nav-arrow1 {
+    margin-left: 3px;
+    width: 10px;
+    margin-bottom: 1px;
+    height: 6px;
+}
+
+.nav-arrow2 {
+    margin-left: 3px;
+    width: 10px;
+    margin-bottom: 1px;
+    height: 6px;
+    margin-left: auto;
+    transition: 0.2s;
+}
+
+/* active state */
+.mobile-nav-item.active .mobile-nav-link {
+    color: #C93131;
+}
+
+.mobile-nav-item.active .nav-arrow2 {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(96%) saturate(7491%) hue-rotate(358deg) brightness(101%) contrast(115%);
+    transform: rotate(180deg);
+}
+
+body.mega-open .nav-arrow1 {
+    filter: brightness(0) invert(1);
+}
+
+
+body.mega-open .nav-arrow {
+    filter: brightness(0) invert(1);
+    transform: rotate(180deg);
+}
+
+
+
 
 .hero-center {
     position: relative;
-    z-index: 6;
+    /* z-index: ; */
+    /* background-color: #000; */
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    max-width: 600px;
+    width: 100%;
+    padding: 30px 20px;
+    margin: 20px auto;
 }
 
 
@@ -121,18 +174,28 @@ body {
 
 .quote-card {
     width: 100%;
+    /* padding: 10px; */
     max-width: 390px;
+    padding: 1rem;
     background: #fff;
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 0px 12px 12px 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* box-sizing: border-box; */
 }
 
+
+.quote-label {
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+    padding-bottom: 10px;
+}
 
 
 .trip-type {
     display: flex;
     width: 280px;
+    /* padding: 1rem; */
     align-self: flex-start;
     margin-left: calc((100% - 385px) / 2);
 }
@@ -140,22 +203,24 @@ body {
 .trip-type button {
     flex: 1;
     height: 40px;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
+    border: none;
+    margin-left: -2px;
     background: #fff;
     cursor: pointer;
 }
 
 .trip-type button:first-child {
-    border-radius: 6px 0 0 6px;
+    border-radius: 6px 0 0 0px;
 }
 
 .trip-type button:last-child {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 0px 0;
 }
 
 .trip-type .active {
     background: #fbbf24;
-    border-color: #fbbf24;
+    /* border-color: #fbbf24; */
 }
 
 
@@ -210,8 +275,8 @@ form input {
 }
 
 .logo {
-    height: 40px;
-    width: 150px;
+    height: 35px;
+    width: 145px;
 }
 
 .dropdown-wrapper {
@@ -259,14 +324,16 @@ form input {
 }
 
 .tag {
-    background: #e5e7eb;
+    background: #0B2347;
+    color: #f0f0f0;
     padding: 0.25rem 0.6rem;
-    border-radius: 12px;
+    border-radius: 7px;
     font-size: 0.75rem;
 }
 
 .tag button {
     border: none;
+    color: #f0f0f0;
     background: none;
     cursor: pointer;
     margin-left: 4px;
@@ -340,8 +407,9 @@ form input {
     width: 100%;
     max-width: 200px;
     height: 150px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     object-fit: cover;
+    margin-left: 80px
 }
 
 .mega-center {
@@ -351,12 +419,12 @@ form input {
 
 .mega-center h3 {
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #111;
 }
 
 .mega-center p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     line-height: 1.6;
     color: #666;
     margin-bottom: 1.5rem;
@@ -451,6 +519,12 @@ a {
     .mega-left {
         display: none;
     }
+
+    .trip-type {
+        max-width: 100%;
+        padding: 0 16px;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -462,11 +536,10 @@ a {
     }
 
     .trip-type {
-        margin-left: -10px;
-        width: 100%;
+        max-width: 100%;
         padding: 0 16px;
+        justify-content: center;
     }
-
 
     .mega-menu {
         position: fixed;
@@ -552,7 +625,16 @@ a {
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
 }
+
+
+.mobile-nav-logo {
+    height: 32px;
+    width: auto;
+}
+
 
 .mobile-nav-close {
     background: none;

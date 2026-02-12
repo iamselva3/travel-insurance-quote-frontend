@@ -305,7 +305,11 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".nav a");
     const megaOverlay = document.getElementById("megaOverlay");
+    const megaMenu = document.getElementById("megaMenu");
+    const nav = document.querySelector(".nav");
     const body = document.body;
+
+
 
     function openMegaMenu() {
         body.classList.add("mega-open");
@@ -318,18 +322,38 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
-            openMegaMenu();
+
+            if (body.classList.contains("mega-open")) {
+                closeMegaMenu();  
+            } else {
+                openMegaMenu();    
+            }
         });
     });
 
+
     if (megaOverlay) {
         megaOverlay.addEventListener("click", closeMegaMenu);
+
     }
 
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeMegaMenu();
     });
+
+
+    document.addEventListener("click", function (e) {
+        if (body.classList.contains("mega-open")) {
+            const clickedInsideMenu = megaMenu.contains(e.target);
+            const clickedNav = nav.contains(e.target);
+
+            if (!clickedInsideMenu && !clickedNav) {
+                closeMegaMenu();
+            }
+        }
+    });
 });
+
 
 
 
@@ -412,47 +436,37 @@ document.addEventListener("DOMContentLoaded", function () {
         closeAllAccordions();
     }
 
-
     const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
-
 
     function closeAllAccordions() {
         mobileNavToggles.forEach(toggle => {
+            const item = toggle.closest('.mobile-nav-item');
             const dropdown = toggle.nextElementSibling;
-            const arrow = toggle.querySelector('.mobile-nav-arrow');
 
+            item.classList.remove('active');
             dropdown.classList.remove('active');
-            if (arrow) {
-                arrow.classList.remove('active');
-            }
         });
     }
-
 
     function openAccordion(toggle) {
+        const item = toggle.closest('.mobile-nav-item');
         const dropdown = toggle.nextElementSibling;
-        const arrow = toggle.querySelector('.mobile-nav-arrow');
 
-
+        // close others
         mobileNavToggles.forEach(otherToggle => {
-            if (otherToggle !== toggle) {
-                const otherDropdown = otherToggle.nextElementSibling;
-                const otherArrow = otherToggle.querySelector('.mobile-nav-arrow');
+            const otherItem = otherToggle.closest('.mobile-nav-item');
+            const otherDropdown = otherToggle.nextElementSibling;
 
+            if (otherToggle !== toggle) {
+                otherItem.classList.remove('active');
                 otherDropdown.classList.remove('active');
-                if (otherArrow) {
-                    otherArrow.classList.remove('active');
-                }
             }
         });
 
-
+        // toggle current
+        item.classList.toggle('active');
         dropdown.classList.toggle('active');
-        if (arrow) {
-            arrow.classList.toggle('active');
-        }
     }
-
 
     mobileNavToggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
@@ -543,12 +557,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (ages.length > 0) {
 
             if (ages.length <= 3) {
-                agesElement.innerHTML = `<strong>Traveller Ages:</strong> ${ages.join(', ')} <span class="edit">Edit</span>`;
+                agesElement.innerHTML = `<strong>Traveller Ages:</strong> ${ages.join(', ')} `;
             } else {
-                agesElement.innerHTML = `<strong>Traveller Ages:</strong> ${ages.length} travellers <span class="edit">Edit</span>`;
+                agesElement.innerHTML = `<strong>Traveller Ages:</strong> ${ages.length} travellers `;
             }
         } else {
-            agesElement.innerHTML = `<strong>Traveller Ages:</strong> Not specified <span class="edit">Edit</span>`;
+            agesElement.innerHTML = `<strong>Traveller Ages:</strong> Not specified `;
         }
     }
 
@@ -682,43 +696,64 @@ function populateSummary() {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".plan-tab");
+    const cards = document.querySelectorAll(".plan-card");
 
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('edit')) {
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const plan = tab.dataset.plan;
 
-        console.log('Edit clicked - would navigate to edit form');
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
 
-    }
+            cards.forEach(card => {
+                card.classList.remove("active");
+            });
+
+            const target = document.getElementById("plan-" + plan);
+            if (target) target.classList.add("active");
+        });
+    });
 });
 
 
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('btn')) {
-        const planName = e.target.classList.contains('dark') ? 'VOYAGER' : 'VOYAGER PLUS';
-        console.log(`Selected plan: ${planName}`);
+// document.addEventListener('click', function (e) {
+//     if (e.target.classList.contains('edit')) {
+
+//         console.log('Edit clicked - would navigate to edit form');
+
+//     }
+// });
 
 
-    }
-});
+// document.addEventListener('click', function (e) {
+//     if (e.target.classList.contains('btn')) {
+//         const planName = e.target.classList.contains('dark') ? 'VOYAGER' : 'VOYAGER PLUS';
+//         console.log(`Selected plan: ${planName}`);
 
 
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('link') && e.target.textContent.includes('Policy Information')) {
-        console.log('View policy information clicked');
-
-    }
-});
+//     }
+// });
 
 
-document.addEventListener('click', function (e) {
-    if (e.target.textContent.includes('Show all benefits')) {
-        console.log('Show all benefits clicked');
+// document.addEventListener('click', function (e) {
+//     if (e.target.classList.contains('link') && e.target.textContent.includes('Policy Information')) {
+//         console.log('View policy information clicked');
 
-        e.target.textContent = 'Show less benefits';
-    } else if (e.target.textContent.includes('Show less benefits')) {
-        e.target.textContent = 'Show all benefits';
-    }
-});
+//     }
+// });
+
+
+// document.addEventListener('click', function (e) {
+//     if (e.target.textContent.includes('Show all benefits')) {
+//         console.log('Show all benefits clicked');
+
+//         e.target.textContent = 'Show less benefits';
+//     } else if (e.target.textContent.includes('Show less benefits')) {
+//         e.target.textContent = 'Show all benefits';
+//     }
+// });
 
 
 const stepper = document.querySelector('.stepper');
@@ -775,23 +810,30 @@ window.addEventListener("scroll", () => {
 });
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    if (!isMobile) return;
+    if (window.innerWidth <= 768) {
+        const planCards = document.querySelectorAll(".plans-grid.mobile-view .plan-card");
 
-    const planCards = document.querySelectorAll(".mobile-view .plan-card");
+        planCards.forEach(function (card) {
+            const header = card.querySelector(".plan-header");
 
-    planCards.forEach((card) => {
-        const header = card.querySelector(".plan-header");
+            if (header) {
+                header.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    const isActive = card.classList.contains("active");
 
-        header.addEventListener("click", () => {
-            const isActive = card.classList.contains("active");
+                    
+                    planCards.forEach(function (c) {
+                        c.classList.remove("active");
+                    });
 
-            planCards.forEach(c => c.classList.remove("active"));
-
-            if (!isActive) {
-                card.classList.add("active");
+                  
+                    if (!isActive) {
+                        card.classList.add("active");
+                    }
+                });
             }
         });
-    });
+    }
 });

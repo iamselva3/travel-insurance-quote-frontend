@@ -7,6 +7,7 @@
     <meta name="description" content="Find the right travel insurance plan for you" />
     <title>Travel Insurance</title>
 
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
@@ -20,9 +21,14 @@
             <img src="assets/logo-6.png" class="logo" alt="logo" />
 
             <nav class="nav">
-                <a href="#">Travel Insurance</a>
+                <a href="#">Travel Insurance
+
+                    <img src="assets/arrow-down.svg" class="nav-arrow" alt="">
+                </a>
                 <a href="#">Emergency Assistance</a>
-                <a href="#">Customer Service</a>
+                <a href="#">Customer Service
+                    <img src="assets/arrow-down.svg" class="nav-arrow1" alt="">
+                </a>
             </nav>
         </div>
     </header>
@@ -54,7 +60,7 @@
 
                 <form>
                     <div class="dropdown-wrapper">
-                        <label>Where are you travelling?</label>
+                        <label class="quote-label">Where are you travelling?</label>
 
                         <input type="text" id="countrySearch" placeholder="Type or choose your destinations"
                             autocomplete="off" />
@@ -70,14 +76,14 @@
 
 
 
-                    <label for="startDate">When do you leave?</label>
+                    <label for="startDate" class="quote-label">When do you leave?</label>
                     <input type="date" id="startDate" name="startDate" placeholder="DD/MM/YYYY" />
 
-                    <label for="endDate">When do you return?</label>
+                    <label for="endDate" class="quote-label">When do you return?</label>
                     <input type="date" id="endDate" name="endDate" placeholder="DD/MM/YYYY" />
 
 
-                    <label>Current age of all travellers?</label>
+                    <label class="quote-label">Current age of all travellers?</label>
 
                     <div class="ages-wrapper">
                         <input type="number" min="0" max="120" class="age-input" placeholder="Age" />
@@ -108,8 +114,9 @@
             <div class="mega-center">
                 <h3>Travel Insurance</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vestibulum quis purus neque.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptates esse expedita explicabo
+                    nesciunt ad dolorum excepturi velit laborum repellat. Est provident rerum rem molestias qui error
+                    velit nobis incidunt.
                 </p>
                 <a href="./quote.html"><button class="quote-btn">GET A QUOTE</button></a>
             </div>
@@ -134,13 +141,15 @@
 
     <div id="mobileNavMenu" class="mobile-nav-menu">
         <div class="mobile-nav-header">
+            <img src="assets/logo-6.png" class="mobile-nav-logo" alt="logo">
             <button id="mobileNavClose" class="mobile-nav-close">✕</button>
         </div>
         <nav class="mobile-nav-links">
             <div class="mobile-nav-item">
                 <a href="#" class="mobile-nav-link mobile-nav-toggle">
                     Travel Insurance
-                    <span class="mobile-nav-arrow">▼</span>
+                    <!-- <span class="mobile-nav-arrow">▼</span> -->
+                    <img src="assets/arrow-down.svg" class="nav-arrow2" alt="">
                 </a>
                 <div class="mobile-nav-dropdown">
                     <a href="#" class="mobile-nav-sublink">Plans</a>
@@ -155,7 +164,8 @@
             <div class="mobile-nav-item">
                 <a href="#" class="mobile-nav-link mobile-nav-toggle">
                     Emergency Assistance
-                    <span class="mobile-nav-arrow">▼</span>
+                    <!-- <span class="mobile-nav-arrow">▼</span> -->
+                    <img src="assets/arrow-down.svg" class="nav-arrow2" alt="">
                 </a>
                 <div class="mobile-nav-dropdown">
                     <a href="#" class="mobile-nav-sublink">Emergency Services</a>
@@ -169,7 +179,8 @@
             <div class="mobile-nav-item">
                 <a href="#" class="mobile-nav-link mobile-nav-toggle">
                     Customer Service
-                    <span class="mobile-nav-arrow">▼</span>
+                    <!-- <span class="mobile-nav-arrow">▼</span> -->
+                    <img src="assets/arrow-down.svg" class="nav-arrow2" alt="">
                 </a>
                 <div class="mobile-nav-dropdown">
                     <a href="#" class="mobile-nav-sublink">Contact Us</a>
